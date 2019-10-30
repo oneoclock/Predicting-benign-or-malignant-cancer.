@@ -1,5 +1,4 @@
 import pandas as pd
-#import numpy as np
 from sklearn.model_selection import train_test_split
 from sklearn import preprocessing
 import matplotlib.pyplot as plt
@@ -10,7 +9,7 @@ from tensorflow import keras
 from tensorflow.keras import layers
 
 
-dataset_path="C:/Users/Hiral/Desktop/DLNLP/a1.1/breast-cancer.csv"
+dataset_path="breast-cancer.csv"
 
 raw_dataset = pd.read_csv(dataset_path)
 dataset=raw_dataset.copy()
@@ -39,13 +38,6 @@ norm_xTrain=(xTrain-statistics1['mean'])/statistics1['std']
 norm_xTest=(xTest-statistics2['mean'])/statistics2['std']
 
 print(norm_xTrain)
-
-#model = Sequential()
-#model.add(Dense(2,  # output dim is 2, one score per each class
-#                activation='softmax',
-#                kernel_regularizer=L1L2(l1=0.0, l2=0.1),
-#                input_dim=len(feature_vector)))
-
 
 def build_model1():
   model = keras.Sequential([
